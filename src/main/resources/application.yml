@@ -1,0 +1,24 @@
+spring:
+  datasource:
+     primary:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/shanghai?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
+        password: root
+     secondary:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/wuhan?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
+        password: root
+  #jpa相关配置,hibernate启动的时候只做表的格式验证，不做增删改的操作
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+ #热部署相关配置
+devtools:
+  restart:
+      additional-paths: src/main/java
+      exclude: static/**,templates/**
+
